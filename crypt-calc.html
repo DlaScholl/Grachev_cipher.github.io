@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoGid | Калькулятор</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">🧬 Crypto<span>Gid</span></a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="history.html">История</a></li>
+                    <li><a href="crypt-calc.html" class="calc-link">Калькулятор</a></li>
+                    <li><a href="training.html" class="train-link">Тренировка</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- 1. БЛОК ЦЕЗАРЯ -->
+        <div class="box">
+            <h2>🏛 1. Классический Модуль Цезаря (Кириллица)</h2>
+            <textarea id="caesar-text" rows="3" placeholder="Введите текст на русском языке..."></textarea>
+            
+            <div class="enigma-settings">
+                <div>
+                    <label>Ключ сдвига (от 1 до 20):</label>
+                    <input type="number" id="caesar-shift" value="3" min="1" max="20">
+                </div>
+                <div>
+                    <label>Режим работы:</label>
+                    <select id="caesar-mode">
+                        <option value="crypt">Зашифровать</option>
+                        <option value="decrypt">Расшифровать</option>
+                    </select>
+                </div>
+            </div>
+            <button class="btn" id="caesar-btn">Выполнить операцию</button>
+            <div class="result-box" id="caesar-result">Результат отобразится здесь...</div>
+        </div>
+
+        <!-- 2. БЛОК ВИЖЕНЕРА (НОВЫЙ) -->
+        <div class="box" style="border-color: #238636;">
+            <h2>🔑 2. Модуль Виженера (Кириллица)</h2>
+            <p style="font-size: 14px; margin-bottom: 10px; color: #8b949e;">Шифрование по ключевому слову. Каждая буква ключа задает свой сдвиг.</p>
+            <textarea id="vigenere-text" rows="3" placeholder="Введите текст на русском языке..."></textarea>
+            
+            <div class="enigma-settings">
+                <div>
+                    <label>Ключевое слово (только русские буквы):</label>
+                    <input type="text" id="vigenere-key" value="КЛЮЧ" placeholder="Например: СЕКРЕТ">
+                </div>
+                <div>
+                    <label>Режим работы:</label>
+                    <select id="vigenere-mode">
+                        <option value="crypt">Зашифровать</option>
+                        <option value="decrypt">Расшифровать</option>
+                    </select>
+                </div>
+            </div>
+            <button class="btn" id="vigenere-btn" style="background-color: #238636;">Выполнить операцию</button>
+            <div class="result-box" id="vigenere-result" style="color: #56d364;">Результат отобразится здесь...</div>
+        </div>
+
+        <!-- 3. БЛОК ЭНИГМЫ -->
+        <div class="box" style="border-color: #da3633;">
+            <h2>⚡ 3. Математическая модель машины «Энигма» (Латиница)</h2>
+            <p style="font-size: 14px; margin-bottom: 10px; color: #8b949e;">Важно: повторное шифрование зашифрованного текста при ТЕХ ЖЕ настройках роторов полностью расшифровывает сообщение назад!</p>
+            
+            <textarea id="enigma-text" rows="3" placeholder="ENTER TEXT IN ENGLISH ONLY..."></textarea>
+            
+            <label>Начальные позиции трех роторов (0-25):</label>
+            <div class="enigma-settings">
+                <div>
+                    <input type="number" id="rot1" value="0" min="0" max="25">
+                </div>
+                <div>
+                    <input type="number" id="rot2" value="0" min="0" max="25">
+                </div>
+                <div>
+                    <input type="number" id="rot3" value="0" min="0" max="25">
+                </div>
+            </div>
+            
+            <button class="btn btn-danger" id="enigma-btn">Запустить шифратор Энигмы</button>
+            <div class="result-box" id="enigma-result" style="color: #ff7b72;">ENIGMA OUTPUT...</div>
+        </div>
+    </div>
+
+    <footer>
+        <p>[CryptoGid Станция Эволюции Шифров] © 2026</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

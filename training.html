@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoGid | Тренировка</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">🧬 Crypto<span>Gid</span></a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="history.html">История</a></li>
+                    <li><a href="crypt-calc.html" class="calc-link">Калькулятор</a></li>
+                    <li><a href="training.html" class="train-link">Тренировка</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Окно ошибки блокировки -->
+        <div id="lock-notice" class="box" style="border-color: #da3633; display: none; background: #2d1717;">
+            <h3 style="color: #ff7b72;">⚠️ Калькулятор заблокирован!</h3>
+            <p>Вы начали проходить тестирование. Чтобы разблокировать доступ к калькулятору, вам необходимо ответить на все оставшиеся вопросы теста!</p>
+        </div>
+
+        <div class="box">
+            <h2>🎯 Лаборатория дешифровки: Экзамен</h2>
+            <p>Решите криптографические загадки ниже. Ответьте на все 10 вопросов. Будьте внимательны: во время прохождения теста доступ к калькулятору шифров заблокирован!</p>
+            <p id="quiz-status" style="color: #58a6ff; font-weight: bold; margin-top: 10px;">Статус: Тест ожидает начала</p>
+        </div>
+
+        <!-- Вопрос 1 -->
+        <div class="box quiz-question">
+            <h3>Вопрос 1: Какое слово скрыто в шифре Цезаря «Нмэщ» (сдвиг +3 позиции вперед по алфавиту)?</h3>
+            <p style="font-size: 14px; color: #8b949e; margin-bottom: 10px;">Подсказка: Сдвиньте буквы на 3 шага назад (АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ).</p>
+            <div style="margin-top: 15px;">
+                <div class="quiz-option" onclick="checkAnswer(this, false)">САЙТ</div>
+                <div class="quiz-option" onclick="checkAnswer(this, true)">КЛЮЧ</div>
+                <div class="quiz-option" onclick="checkAnswer(this, false)">ШИФР</div>
+            </div>
+        </div>
+
+        <!-- Вопрос 2 -->
+        <div class="box quiz-question">
+            <h3>Вопрос 2: Декодируйте слово «Тёлсби» зашифрованное методом Цезаря со сдвигом +2.</h3>
+            <div style="margin-top: 15px;">
+                <div class="quiz-option" onclick="checkAnswer(this, true)">СЕКРЕТ</div>
+                <div class="quiz-option" onclick="checkAnswer(this, false)">ПАРОЛЬ</div>
+                <div class="quiz-option" onclick="checkAnswer(this, false)">КОМПАС</div>
+            </div>
+        </div>
+
+        <!-- Вопрос 3 -->
+        <div class="box quiz-question">
+            <h3>Вопрос 3: Какая деталь Энигмы заставляла ток идти в обратном направлении через роторы и делала невозможным шифрование буквы самой в себя?</h3>
+            <div style="margin-top: 15px;">
+                <div class="quiz-option" onclick="checkAnswer(this, false)">Коммутационная панель</div>
+                <div class="quiz-option" onclick="checkAnswer(this, false)">Клавиатура оператора</div>
+                <div class="quiz-option" onclick="checkAnswer(this, true)">Рефлектор (Отражатель)</div>
+            </div>
+        </div>
+
+        <!-- Вопрос 4 -->
+        <div class="box quiz-question">
+            <h3>Вопрос 4: Какое слово получится, если зашифровать слово «БОР» шифром Цезаря со сдвигом +3?</h3>
+            <div style="margin-top: 15px;">
+                <div class="quiz-option" onclick="checkAnswer(this, true)">ГУУ</div>
+                <div class="quiz-option" onclick="checkAnswer(this, false)">ВРФ</div>
+                <div class="quiz-option" onclick="checkAnswer(this, false)">ДФС</div>
+            </div>
+        </div>
+
+        <!-- Вопрос 5 -->
+        <div class="box quiz-question">
+            <h3>Вопрос 5: Шифр Виженера основан на использовании...</h3>
+            <div style="margin-top: 15px;">
+                <div class="quiz-option" onclick="checkAnswer(this, false)">Только одного постоянного сдвига для всего текста</div>
+                <div class="quiz-option" onclick="checkAnswer(this, true)">Ключевого слова, определяющего разные сдвиги для каждой буквы</div>
+                <div class="quiz-option" onclick="checkAnswer(this, false)">Электроники и магнитных дисков</div>
+            </div>
+        </div>
+
+        <!-- Вопрос 6 -->
+        <div class="box quiz-question">
+            <h3>Вопрос 6: Расшифруйте слово «БВГ», если оно закодировано шифром Виженера с ключом «Б» (буква «Б» означает сдвиг всех букв на +1)?</h3>
+            <div style="margin-top: 15px;">
+                <div class="quiz-option" onclick="checkAnswer(this, false)">ГДЕ</div>
+                <div class="quiz-option" onclick="checkAnswer(this, false)">ВАЛ</div>
+                <div class="quiz-option" onclick="checkAnswer(this, true)">АБВ</div>
+            </div>
+        </div>
+
+        <!-- Вопрос 7 -->
+        <div class="box quiz-question">
+            <h3>Вопрос 7: Какое техническое действие происходило в «Энигме» ПЕРЕД отправкой электрического сигнала при нажатии клавиши?</h3>
+            <div style="margin-top: 15px;">
+                <div class="quiz-option" onclick="checkAnswer(this, true)">Первый ротор автоматически проворачивался на один шаг</div>
+                <div class="quiz-option" onclick="checkAnswer(this, false)">Включалась сигнальная сирена</div>
+                <div class="quiz-option" onclick="checkAnswer(this, false)">Машина переключалась в зеркальный режим</div>
+            </div>
+        </div>
+
+        <!-- Вопрос 8 -->
+        <div class="box quiz-question">
+            <h3>Вопрос 8: Как назывался британский шифровальный центр, в котором взламывали «Энигму» во время Второй мировой войны?</h3>
+            <div style="margin-top: 15px;">
+                <div class="quiz-option" onclick="checkAnswer(this, false)">Пентагон</div>
+                <div class="quiz-option" onclick="checkAnswer(this, true)">Блетчли-парк</div>
+                <div class="quiz-option" onclick="checkAnswer(this, false)">Уайтхолл</div>
+            </div>
+        </div>
+
+        <!-- Вопрос 9 -->
+        <div class="box quiz-question">
+            <h3>Вопрос 9: Какое имя носила дешифровальная электромеханическая машина, созданная Аланом Тьюрингом?</h3>
+            <div style="margin-top: 15px;">
+                <div class="quiz-option" onclick="checkAnswer(this, false)">Колосс</div>
+                <div class="quiz-option" onclick="checkAnswer(this, false)">Энигма-Брейкер</div>
+                <div class="quiz-option" onclick="checkAnswer(this, true)">Бомба</div>
+            </div>
+        </div>
+
+        <!-- Вопрос 10 -->
+        <div class="box quiz-question">
+            <h3>Вопрос 10: Какое фундаментальное правило работы «Энигмы» помогло криптоаналитикам сузить миллиарды комбинаций при поиске ключей?</h3>
+            <div style="margin-top: 15px;">
+                <div class="quiz-option" onclick="checkAnswer(this, true)">Ни одна буква никогда не шифровалась сама в себя</div>
+                <div class="quiz-option" onclick="checkAnswer(this, false)">Машина не умела шифровать гласные буквы</div>
+                <div class="quiz-option" onclick="checkAnswer(this, false)">При шифровании всегда использовался только немецкий алфавит</div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>[CryptoGid Станция Эволюции Шифров] © 2026</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

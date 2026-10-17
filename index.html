@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoGid | Главная</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">🧬 Crypto<span>Gid</span></a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="history.html">История</a></li>
+                    <li><a href="crypt-calc.html" class="calc-link">Калькулятор</a></li>
+                    <li><a href="training.html" class="train-link">Тренировка</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="hero">
+            <h1>Эволюция Шифрования: От Цезаря до Энигмы</h1>
+            <p>Пройдите путь от древнеримских алгоритмов подстановки до электромеханических шифровальных машин Третьего рейха.</p>
+            <div style="display: flex; gap: 15px; justify-content: center;">
+                <a href="history.html" class="btn">Изучить историю</a>
+                <a href="training.html" class="btn" style="background-color: #da3633;">Начать тестирование</a>
+            </div>
+        </section>
+
+        <div class="box">
+            <h2>⚙️ Принципы работы защитных систем:</h2>
+            
+            <!-- Блок 1: Шифр Цезаря -->
+            <div style="margin-bottom: 35px; border-left: 3px solid #58a6ff; padding-left: 15px;">
+                <h3>1. Шифр Цезаря (Сдвиг алфавита)</h3>
+                <p><strong>Принцип:</strong> Каждая буква исходного текста замещается символом, находящимся на некотором постоянном числе позиций правее или левее неё в алфавите. Если сдвиг равен 3, то буква <em>А</em> становится <em>Г</em>.</p>
+                <div style="margin-top: 15px; text-align: center; background: #21262d; padding: 10px; border-radius: 6px;">
+                    <img src="C:\Users\user\Desktop\cipher\Caesar_cipher.jpg" alt="Диск Цезаря" style="max-width: 100%; height: auto; border-radius: 4px; border: 1px solid #30363d;">
+                    <p style="font-size: 13px; color: #8b949e; margin-top: 5px; margin-bottom: 0;">Иллюстрация: Сдвиг символов по круговому алфавиту Цезаря</p>
+                </div>
+            </div>
+
+            <!-- Блок 2: Шифр Виженера -->
+            <div style="margin-bottom: 35px; border-left: 3px solid #238636; padding-left: 15px;">
+                <h3>2. Шифр Виженера (Полиалфавитный сдвиг)</h3>
+                <p><strong>Принцип:</strong> Последовательность нескольких шифров Цезаря с различными значениями сдвига, определяемыми ключевым словом. Каждая буква ключа указывает на индивидуальный числовой сдвиг для конкретного символа сообщения.</p>
+                <div style="margin-top: 15px; text-align: center; background: #21262d; padding: 10px; border-radius: 6px;">
+                    <img src="C:\Users\user\Desktop\cipher\Vigenere_cipher.jpg" alt="Шифр Виженера" style="max-width: 100%; height: auto; border-radius: 4px; border: 1px solid #30363d;">
+                    <p style="font-size: 13px; color: #8b949e; margin-top: 5px; margin-bottom: 0;">Иллюстрация: Применение динамического сдвига по кодовому слову</p>
+                </div>
+            </div>
+
+            <!-- Блок 3: Энигма -->
+            <div style="border-left: 3px solid #da3633; padding-left: 15px;">
+                <h3>3. Машина «Энигма» (Роторное шифрование)</h3>
+                <p><strong>Принцип:</strong> Электрический ток бежит через систему вращающихся дисков (роторов) к рефлектору, отражается и возвращается обратно, зажигая лампочку. Роторы постоянно вращаются при каждом нажатии, меняя схему на лету.</p>
+                <div style="margin-top: 15px; text-align: center; background: #21262d; padding: 10px; border-radius: 6px;">
+                    <img src="C:\Users\user\Desktop\cipher\Enigma_cipher.jpg" alt="Схема Энигмы" style="max-width: 100%; height: auto; border-radius: 4px; border: 1px solid #30363d;">
+                    <p style="font-size: 13px; color: #8b949e; margin-top: 5px; margin-bottom: 0;">Иллюстрация: Замкнутый путь прохождения электрического сигнала через роторы Энигмы</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>[CryptoGid Станция Эволюции Шифров] © 2026</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
